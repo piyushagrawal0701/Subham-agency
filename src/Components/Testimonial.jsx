@@ -207,7 +207,7 @@ export default function Testimonial() {
               Loved By Clients
             </div>
 
-            <h2 className="text-5xl md:text-7xl font-semibold text-black">
+            <h2 className="text-4xl md:text-7xl font-semibold text-black">
               What People Say
             </h2>
 

@@ -32,7 +32,7 @@ export default function Navbar() {
           <div className="flex items-center justify-between">
             {/* Logo */}
 
-            <a href="/" className="flex items-center gap-3 text-white">
+            <Link to="/" className="flex items-center gap-3 text-white">
               <div className="w-10 h-10 flex items-center justify-center">
                 <svg
                   viewBox="0 0 40 40"
@@ -47,7 +47,7 @@ export default function Navbar() {
               </div>
 
               <span className="text-3xl font-semibold">Subham</span>
-            </a>
+            </Link>
 
             {/* Desktop Nav */}
 
@@ -195,9 +195,9 @@ export default function Navbar() {
               </button>
 
               {navItems.map((item) => (
-                <a
+                <Link
                   key={item.label}
-                  href={item.href}
+                  to={item.to}
                   onClick={() => setIsOpen(false)}
                   className="
                     text-white
@@ -208,7 +208,7 @@ export default function Navbar() {
                   "
                 >
                   {item.label}
-                </a>
+                </Link>
               ))}
 
               <a

@@ -47,7 +47,7 @@ const HeroSection = () => {
           </svg>
           
 
-          <div class="flex items-center mt-32 gap-2 border border-slate-600 text-gray-50 rounded-full px-4 py-2">
+          <div class="flex items-center sm:mt-32 mt-24 gap-2 border border-slate-600 text-gray-50 rounded-full px-4 py-2">
             <div class="size-2.5 bg-green-500 rounded-full"></div>
             <span>Prioritizing your brand identity</span>
           </div>

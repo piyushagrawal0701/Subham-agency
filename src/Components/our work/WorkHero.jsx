@@ -5,7 +5,7 @@ export default function WorkHero({ title, subtitle }) {
     <section
       className="
       relative
-      h-[620px]
+      h-[520px]
       overflow-hidden
       rounded-[45px]
       bg-[#141414]
@@ -40,11 +40,11 @@ export default function WorkHero({ title, subtitle }) {
             Our Work
           </span>
 
-          <h1 className="mt-6 text-6xl md:text-8xl font-semibold text-white">
+          <h1 className="mt-6 text-4xl md:text-8xl font-semibold text-white">
             {title}
           </h1>
 
-          <p className="mt-8 text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
+          <p className="mt-8 sm:text-xl text-md text-gray-400 max-w-3xl mx-auto leading-relaxed">
             {subtitle}
           </p>
 

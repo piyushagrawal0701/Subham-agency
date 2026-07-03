@@ -51,15 +51,15 @@ const HeroSection = () => {
             <div class="size-2.5 bg-green-500 rounded-full"></div>
             <span>Prioritizing your brand identity</span>
           </div>
-          <h1 class="text-center text-5xl leading-[68px] md:text-6xl md:leading-[70px] mt-4 font-semibold max-w-2xl">
-            We help build brands
+          <h1 class="text-center text-5xl leading-[68px] md:text-6xl md:leading-[70px] mt-4 font-semibold max-w-2xl max-md:px-4">
+            We help <span className="text-indigo-400">build</span> brands
           </h1>
           <p class="text-center text-base max-w-lg mt-2">
             At Subham, we help brands create identities and stories that truly
             connect with today's audiences.
           </p>
-          <div class="flex items-center gap-4 mt-8">
-            <button class="flex items-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white active:scale-95 rounded-lg px-7 h-11">
+          <div class="flex items-center gap-4 mt-8 max-md:flex-col">
+            <button class="max-md:w-full text-center mx-auto flex items-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white active:scale-95 rounded-lg px-7 h-11">
               Start Today
               <svg
                 width="20"

@@ -1,38 +1,42 @@
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [workOpen, setWorkOpen] = useState(false);
 
-  const navItems = [
+  const workItems = [
     {
-      label: "Home",
-      to: "/",
+      title: "UI/UX Design",
+      desc: "Design systems, mobile & web experiences",
+      path: "/our-work/branding",
     },
     {
-      label: "About",
-      to: "/about",
+      title: "AI Design",
+      desc: "AI visuals & creative assets",
+      path: "/our-work/social",
     },
-    // {
-    //   label: "Services",
-    //   to: "/services",
-    // },
     {
-      label: "Our Work",
-      to: "/our-work",
+      title: "Website Development",
+      desc: "Modern websites & web applications",
+      path: "/our-work/web",
     },
   ];
 
   return (
     <>
-      <header className="fixed top-0 left-0 w-full z-[999]">
-        <div className="max-w-[1800px] mx-auto px-5 md:px-10 pt-6">
-          <div className="flex items-center justify-between">
+      <header className="absolute top-0 left-0 w-full z-50">
+        <div className="px-6 md:px-10 py-6">
+          <div className="flex items-center justify-between relative">
+
             {/* Logo */}
 
-            <Link to="/" className="flex items-center gap-3 text-white">
+            <Link
+              to="/"
+              className="flex items-center gap-3 text-white"
+            >
               <div className="w-10 h-10 flex items-center justify-center">
                 <svg
                   viewBox="0 0 40 40"
@@ -46,57 +50,161 @@ export default function Navbar() {
                 </svg>
               </div>
 
-              <span className="text-3xl font-semibold">Subham</span>
+              <span className="text-3xl font-semibold">
+                Subham
+              </span>
             </Link>
 
-            {/* Desktop Nav */}
+            {/* Desktop Navbar */}
 
             <nav
               className="
-                hidden
-                md:flex
-                absolute
-                left-1/2
-                -translate-x-1/2
-                items-center
-                gap-10
-                bg-white/5
-                backdrop-blur-xl
-                border
-                border-white/5
-                rounded-full
-                px-8
-                py-4
-              "
+              hidden
+              md:flex
+              absolute
+              left-1/2
+              -translate-x-1/2
+              items-center
+              gap-10
+              px-8
+              py-4
+              rounded-full
+              bg-white/5
+              backdrop-blur-xl
+              border
+              border-white/10
+            "
             >
-              {navItems.map((item) => (
-                <Link
-                  key={item.label}
-                  to={item.to}
-                  className="
-                    text-white
-                    text-lg
-                    font-medium
-                    transition
-                    hover:text-violet-400
-                  "
-                >
-                  {item.label}
-                </Link>
-              ))}
+              <Link
+                to="/"
+                className="text-white hover:text-violet-400 transition"
+              >
+                Home
+              </Link>
+
+              <Link
+                to="/about"
+                className="text-white hover:text-violet-400 transition"
+              >
+                About
+              </Link>
+
+              {/* Dropdown */}
+
+              <div
+                className="relative"
+                onMouseEnter={() => setWorkOpen(true)}
+                onMouseLeave={() => setWorkOpen(false)}
+              >
+                <button className="flex items-center gap-2 text-white hover:text-violet-400 transition">
+                  Our Work
+
+                  <ChevronDown
+                    size={18}
+                    className={`transition duration-300 ${
+                      workOpen ? "rotate-180" : ""
+                    }`}
+                  />
+                </button>
+
+                <AnimatePresence>
+                  {workOpen && (
+                    <motion.div
+                      initial={{
+                        opacity: 0,
+                        y: 15,
+                        scale: .95,
+                      }}
+                      animate={{
+                        opacity: 1,
+                        y: 0,
+                        scale: 1,
+                      }}
+                      exit={{
+                        opacity: 0,
+                        y: 15,
+                        scale: .95,
+                      }}
+                      transition={{
+                        duration: .25,
+                      }}
+                      className="
+                      absolute
+                      left-1/2
+                      -translate-x-1/2
+                      top-7
+                      w-80
+                      rounded-3xl
+                      overflow-hidden
+                      bg-[#181818]
+                      border
+                      border-white/10
+                      shadow-2xl
+                    "
+                    >
+                      <div className="p-3">
+
+                        {workItems.map((item) => (
+
+                          <Link
+                            key={item.title}
+                            to={item.path}
+                            onClick={() => setWorkOpen(false)}
+                            className="
+                            block
+                            rounded-2xl
+                            p-5
+                            hover:bg-white/5
+                            transition
+                          "
+                          >
+                            <div className="flex justify-between items-center">
+
+                              <div>
+
+                                <h3 className="text-white font-semibold text-lg">
+                                  {item.title}
+                                </h3>
+
+                                <p className="text-gray-400 text-sm mt-1">
+                                  {item.desc}
+                                </p>
+
+                              </div>
+
+                              <motion.div
+                                whileHover={{
+                                  x: 4,
+                                }}
+                                className="text-gray-500 text-xl"
+                              >
+                                →
+                              </motion.div>
+
+                            </div>
+
+                          </Link>
+
+                        ))}
+
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
             </nav>
 
             {/* Desktop Button */}
 
             <div className="hidden md:block">
+
               <a
-                href="https://wa.me/+919334076843?text=Hi,%20I%20visited%20your%20website%20and%20would%20like%20to%20discuss%20my%20project.%20Please%20share%20more%20details."
+                href="https://wa.me/919334076843?text=Hi,%20I%20visited%20your%20website%20and%20would%20like%20to%20discuss%20my%20project."
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <button
                   className="
-                  hover:cursor-pointer
                   px-8
                   py-4
                   rounded-full
@@ -104,84 +212,72 @@ export default function Navbar() {
                   border-white/20
                   text-white
                   hover:bg-white/10
-                  transition-all
+                  transition
                 "
                 >
                   Connect
                 </button>
               </a>
+
             </div>
 
-            {/* Mobile Button */}
+            {/* Mobile Menu Button */}
 
             <button
               onClick={() => setIsOpen(true)}
               className="
-                md:hidden
-                text-white
-                w-12
-                h-12
-                rounded-full
-                border
-                border-white/20
-                flex
-                items-center
-                justify-center
-              "
+              md:hidden
+              w-12
+              h-12
+              rounded-full
+              border
+              border-white/20
+              flex
+              items-center
+              justify-center
+              text-white
+            "
             >
-              <Menu size={24} />
+              <Menu size={26} />
             </button>
+
           </div>
         </div>
       </header>
 
-      {/* Mobile Menu */}
+            {/* Mobile Menu */}
 
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{
-              opacity: 0,
-            }}
-            animate={{
-              opacity: 1,
-            }}
-            exit={{
-              opacity: 0,
-            }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
             className="
               fixed
               inset-0
-              z-[1000]
-              bg-black/90
+              z-[999]
+              bg-black/95
               backdrop-blur-xl
             "
           >
             <motion.div
-              initial={{
-                y: -50,
-                opacity: 0,
-              }}
-              animate={{
-                y: 0,
-                opacity: 1,
-              }}
-              exit={{
-                y: -50,
-                opacity: 0,
-              }}
-              transition={{
-                duration: 0.3,
-              }}
+              initial={{ y: -40, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              exit={{ y: -40, opacity: 0 }}
+              transition={{ duration: 0.35 }}
               className="
                 h-full
                 flex
                 flex-col
                 items-center
                 justify-center
-                gap-10
+                px-8
+                py-10
               "
             >
+              {/* Close */}
+
               <button
                 onClick={() => setIsOpen(false)}
                 className="
@@ -194,41 +290,118 @@ export default function Navbar() {
                 <X size={32} />
               </button>
 
-              {navItems.map((item) => (
-                <Link
-                  key={item.label}
-                  to={item.to}
-                  onClick={() => setIsOpen(false)}
-                  className="
-                    text-white
-                    text-3xl
-                    font-semibold
-                    hover:text-violet-400
-                    transition
-                  "
-                >
-                  {item.label}
-                </Link>
-              ))}
+              {/* Home */}
+
+              <Link
+                to="/"
+                onClick={() => setIsOpen(false)}
+                className="
+                 text-3xl
+                  font-semibold
+                  text-white
+                  hover:text-violet-400
+                  transition
+                  mb-8
+                "
+              >
+                Home
+              </Link>
+
+              {/* About */}
+
+              <Link
+                to="/about"
+                onClick={() => setIsOpen(false)}
+                className="
+                 text-3xl
+                  font-semibold
+                  text-white
+                  hover:text-violet-400
+                  transition
+                  mb-10
+                "
+              >
+                About
+              </Link>
+
+              {/* Our Work */}
+
+              <div className="w-full max-w-sm">
+
+                <h2 className="text-centertext-3xl font-semibold text-white mb-6">
+                  Our Work
+                </h2>
+
+                <div className="space-y-4">
+
+                  {workItems.map((item) => (
+
+                    <Link
+                      key={item.title}
+                      to={item.path}
+                      onClick={() => setIsOpen(false)}
+                      className="
+                        block
+                        rounded-2xl
+                        bg-white/5
+                        border
+                        border-white/10
+                        p-5
+                        hover:bg-white/10
+                        transition
+                      "
+                    >
+                      <div className="flex items-center justify-between">
+
+                        <div>
+
+                          <h3 className="text-white text-lg font-semibold">
+                            {item.title}
+                          </h3>
+
+                          <p className="text-gray-400 text-sm mt-1">
+                            {item.desc}
+                          </p>
+
+                        </div>
+
+                        <span className="text-gray-500 text-2xl">
+                          →
+                        </span>
+
+                      </div>
+
+                    </Link>
+
+                  ))}
+
+                </div>
+
+              </div>
+
+              {/* Connect */}
 
               <a
-                href="https://wa.me/+919334076843?text=Hi,%20I%20visited%20your%20website%20and%20would%20like%20to%20discuss%20my%20project.%20Please%20share%20more%20details."
+                href="https://wa.me/919334076843?text=Hi,%20I%20visited%20your%20website%20and%20would%20like%20to%20discuss%20my%20project."
                 target="_blank"
                 rel="noopener noreferrer"
+                className="mt-12"
               >
                 <button
                   className="
-                  mt-6
-                  px-8
-                  py-4
-                  bg-violet-600
-                  text-white
-                  rounded-full
-                "
+                    px-10
+                    py-4
+                    rounded-full
+                    bg-violet-600
+                    hover:bg-violet-700
+                    text-white
+                    transition
+                  "
                 >
                   Connect
                 </button>
               </a>
+
             </motion.div>
           </motion.div>
         )}

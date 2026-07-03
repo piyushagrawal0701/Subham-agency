@@ -35,11 +35,11 @@ export default function AboutSection() {
             About Us
           </span>
 
-          <h1 className="mt-6 text-5xl md:text-7xl font-semibold tracking-tight text-white">
+          <h1 className="mt-6 text-4xl md:text-7xl font-semibold tracking-tight text-white">
             Design Driven
           </h1>
 
-          <p className="max-w-2xl mx-auto mt-5 text-gray-400 text-lg">
+          <p className="max-w-2xl mx-auto mt-5 text-gray-400 sm:text-lg text-md">
             We are the architects of brand strategy, crafting visual
             identities and narratives that resonate with audiences.
           </p>

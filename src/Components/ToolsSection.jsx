@@ -112,7 +112,7 @@ export default function ToolsSection() {
           className="
             text-center
             text-white
-            text-5xl
+            text-4xl
             md:text-7xl
             font-semibold
             mt-8

@@ -79,7 +79,7 @@ export default function AboutSection() {
             whileInView="visible"
             viewport={{ once: true }}
             whileHover={{ y: -5 }}
-            className="xl:col-span-3 xl:row-span-2 bg-[#5B33D6] rounded-[28px] p-8 flex flex-col justify-between"
+            className="xl:col-span-3 xl:row-span-2 bg-[#5B33D6] rounded-[28px] p-8 flex flex-col justify-between max-md:hidden"
           >
             <Users size={48} className="text-white" />
 
@@ -110,7 +110,7 @@ export default function AboutSection() {
             whileInView="visible"
             viewport={{ once: true }}
             whileHover={{ scale: 1.02 }}
-            className="xl:col-span-3 rounded-[28px] overflow-hidden"
+            className="xl:col-span-3 rounded-[28px] overflow-hidden max-md:hidden"
           >
             <img
               src="https://images.unsplash.com/photo-1522071820081-009f0129c71c"
@@ -126,7 +126,7 @@ export default function AboutSection() {
             whileInView="visible"
             viewport={{ once: true }}
             whileHover={{ y: -5 }}
-            className="xl:col-span-3 xl:row-span-2 bg-[#1C1C1C] rounded-[28px] p-8 flex flex-col justify-between"
+            className="xl:col-span-3 xl:row-span-2 bg-[#1C1C1C] rounded-[28px] p-8 flex flex-col justify-between max-md:hidden"
           >
             <Briefcase
               size={44}
@@ -156,7 +156,7 @@ export default function AboutSection() {
             whileInView="visible"
             viewport={{ once: true }}
             whileHover={{ scale: 1.02 }}
-            className="xl:col-span-3 bg-white border border-gray-200 rounded-[28px] p-8"
+            className="xl:col-span-3 bg-white border border-gray-200 rounded-[28px] p-8 max-md:hidden"
           >
             <Sparkles
               size={42}
@@ -205,7 +205,7 @@ export default function AboutSection() {
           whileInView="visible"
           viewport={{ once: true }}
           whileHover={{ scale: 1.01 }}
-          className="mt-6 bg-[#1C1C1C] rounded-[28px] p-8 flex flex-col md:flex-row items-center justify-between gap-6"
+          className="mt-6 bg-[#1C1C1C] rounded-[28px] p-8 flex flex-col md:flex-row items-center justify-between gap-6 max-md:hidden"
         >
           <div>
             <h2 className="text-white text-3xl font-semibold">

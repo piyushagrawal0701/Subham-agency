@@ -1,95 +1,190 @@
-import React from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
-const HeroSection = () => {
-  const { scrollYProgress } = useScroll();
-  const y = useTransform(scrollYProgress, [0, 1], [-100, 100]);
+import { motion } from "framer-motion";
+import { ArrowRight } from "lucide-react";
+import "./css/HeroCarousel.css";
+
+const topImages = [
+  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEE_nXIteFIau10acFeO_8-7S-A_R8ep-NO3e_1KZXEA&s=10",
+  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFzlaIltsntXfMDnru_sS4enW8yphOSvuYDWF7dYzijPV08MGdNodYBxba&s=10",
+  "https://static.wixstatic.com/media/4b9d2b_4ba75c826a1b4308a6757ee924271032~mv2.png/v1/fill/w_704,h_384,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/4b9d2b_4ba75c826a1b4308a6757ee924271032~mv2.png",
+  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxDK1YMi0cuPp4cUzWOBqt1ddyv87-JLQ7PIXzPmzgFoOL63Z1frzHXIY&s=10",
+  "https://img.magnific.com/free-photo/web-design-technology-browsing-programming-concept_53876-163260.jpg?semt=ais_hybrid&w=740&q=80",
+  "https://img.magnific.com/free-psd/professional-website-design-landing-page-template_23-2148772440.jpg",
+];
+
+
+  const bottomImages = [
+    "https://images.unsplash.com/photo-1517694712202-14dd9538aa97",
+    "https://images.unsplash.com/photo-1521737604893-d14cc237f11d",
+    "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4",
+    "https://images.unsplash.com/photo-1497366754035-f200968a6e72",
+    "https://images.unsplash.com/photo-1516321497487-e288fb19713f",
+  ];
+
+export default function HeroSection() {
   return (
-    <>
-      <motion.section
-        className="
-    relative
-    z-20
-    rounded-t-[60px]
-    -mt-24
-    pt-24
-  "
-      >
-        <section class="flex flex-col items-center text-white text-sm ">
-          <svg
-            class="absolute -z-10 w-screen -mt-40 md:mt-0"
-            width="1440"
-            height="676"
-            viewBox="0 0 1440 676"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <rect
-              x="-92"
-              y="-948"
-              width="1624"
-              height="1624"
-              rx="812"
-              fill="url(#a)"
-            />
-            <defs>
-              <radialGradient
-                id="a"
-                cx="0"
-                cy="0"
-                r="1"
-                gradientUnits="userSpaceOnUse"
-                gradientTransform="rotate(90 428 292)scale(812)"
-              >
-                <stop offset=".63" stop-color="#372AAC" stop-opacity="0" />
-                <stop offset="1" stop-color="#372AAC" />
-              </radialGradient>
-            </defs>
-          </svg>
-          
+    <section className="relative overflow-hidden text-white -mx-6">
+      {/* ================= BACKGROUND ================= */}
 
-          <div class="flex items-center sm:mt-32 mt-24 gap-2 border border-slate-600 text-gray-50 rounded-full px-4 py-2">
-            <div class="size-2.5 bg-green-500 rounded-full"></div>
-            <span>Prioritizing your brand identity</span>
-          </div>
-          <h1 class="text-center text-5xl leading-[68px] md:text-6xl md:leading-[70px] mt-4 font-semibold max-w-2xl max-md:px-4">
-            We help <span className="text-indigo-400">build</span> brands
+      <div
+        className="absolute inset-0"
+        style={{
+          background: `
+          radial-gradient(circle at top center,
+          #8d5bff 0%,
+          #6f3de6 25%,
+          #5127c8 45%,
+          #35167e 65%,
+          #19052e 100%)
+        `,
+        }}
+      />
+
+      {/* Dark Overlay */}
+
+      <div
+        className="absolute inset-0"
+        style={{
+          background:
+            "linear-gradient(to bottom, rgba(0,0,0,.15), rgba(0,0,0,.35), rgba(0,0,0,.55))",
+        }}
+      />
+
+      {/* Vignette */}
+
+      <div
+        className="absolute inset-0"
+        style={{
+          background:
+            "radial-gradient(circle at center, transparent 45%, rgba(0,0,0,.45) 100%)",
+        }}
+      />
+
+      {/* Dot Pattern */}
+
+      <div
+        className="absolute inset-0 opacity-20"
+        style={{
+          backgroundImage:
+            "radial-gradient(rgba(255,255,255,.9) 1px, transparent 1px)",
+          backgroundSize: "18px 18px",
+        }}
+      />
+
+      {/* Glow */}
+
+      <div className="absolute left-1/2 top-0 -translate-x-1/2 w-[900px] h-[700px] rounded-full bg-violet-500 blur-[220px] opacity-30" />
+
+      {/* ================= CONTENT ================= */}
+
+      <div className="relative z-20 max-w-7xl mx-auto px-6 pt-28">
+        {/* Google Rating */}
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.3 }}
+          className="flex flex-col items-center"
+        >
+          <div className="text-5xl font-bold">G</div>
+
+          <div className="flex text-yellow-400 mt-2">★★★★★</div>
+
+          <p className="mt-2 text-white/80 text-sm">4.9 Google Rating</p>
+
+          <h4 className="mt-4 text-xl font-semibold">
+            Leading UI/UX Design Agency
+          </h4>
+        </motion.div>
+
+        {/* Heading */}
+
+        <motion.div
+          initial={{ opacity: 0, y: 70 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.5 }}
+          className="text-center mt-8"
+        >
+          <h1 className="font-semibold leading-[1.1] text-4xl md:text-7xl">
+            We <span className="italic font-serif font-normal">Design</span>{" "}
+            Products That
+            <br className="max-md:hidden" /> {" "}
+            Drive
+            <span className="hidden md:inline-flex items-center gap-3 mx-6">
+              <div className="bg-white rounded-full p-3 text-3xl">🎨</div>
+
+              <div className="bg-white rounded-full p-3 text-3xl">🌐</div>
+
+              <div className="bg-white rounded-full p-3 text-3xl">⚡</div>
+            </span>
+            <span className="md:hidden inline px-2 text-yellow-300">Amazing</span>{" "}
+            <span className="italic font-serif font-normal">Results</span>
           </h1>
-          <p class="text-center text-base max-w-lg mt-2">
-            At Subham, we help brands create identities and stories that truly
-            connect with today's audiences.
-          </p>
-          <div class="flex items-center gap-4 mt-8 max-md:flex-col">
-            <button class="max-md:w-full text-center mx-auto flex items-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white active:scale-95 rounded-lg px-7 h-11">
-              Start Today
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 20 20"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M4.166 10h11.667m0 0L9.999 4.165m5.834 5.833-5.834 5.834"
-                  stroke="#fff"
-                  stroke-width="1.8"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
-            </button>
-            <button class="border border-slate-400 active:scale-95 hover:bg-white/10 transition rounded-lg px-8 h-11">
-              Free consultation
-            </button>
-          </div>
-          <img
-            src="https://raw.githubusercontent.com/prebuiltui/prebuiltui/main/assets/hero/hero-section-showcase-2.png"
-            class="w-full rounded-[15px] max-w-4xl mt-16"
-            alt="hero section showcase"
-          />
-        </section>
-      </motion.section>
-    </>
-  );
-};
+        </motion.div>
 
-export default HeroSection;
+        {/* Countries */}
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.8 }}
+          className="flex justify-center mt-10"
+        >
+          <div className="rounded-full bg-black/40 border border-white/20 backdrop-blur-xl sm:px-8 px-4 py-3 text-xs md:text-base">
+            🌍 Designing across 8+ Countries 🇮🇳 🇺🇸 🇦🇪 🇬🇧 🇸🇬 🇨🇦 🇦🇺
+          </div>
+        </motion.div>
+
+        {/* Button */}
+
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1 }}
+          className="flex justify-center mt-10"
+        >
+          <button className="group bg-white text-violet-700 px-8 py-5 rounded-xl font-semibold flex items-center gap-3 hover:scale-105 transition">
+            Book a Call
+            <ArrowRight
+              size={20}
+              className="group-hover:translate-x-1 transition"
+            />
+          </button>
+        </motion.div>
+      </div>
+
+      {/* ================= IMAGE CAROUSELS ================= */}
+
+      <div className="relative z-20 mt-24 pb-12">
+        {/* Top */}
+
+        <div className="carousel-wrapper">
+          <div className="carousel-track-left">
+            {[...topImages, ...topImages].map((img, index) => (
+              <div
+                key={index}
+                className="w-auto h-[240px] rounded-3xl overflow-hidden flex-shrink-0"
+              >
+                <img src={img} alt="" className="w-full h-full object-cover" />
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Bottom */}
+
+        <div className="carousel-wrapper mt-5">
+          <div className="carousel-track-right">
+            {[...bottomImages, ...bottomImages].map((img, index) => (
+              <div
+                key={index}
+                className="w-auto h-[240px] rounded-3xl overflow-hidden flex-shrink-0"
+              >
+                <img src={img} alt="" className="w-full h-full object-cover" />
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}

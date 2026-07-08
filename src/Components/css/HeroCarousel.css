@@ -1,0 +1,53 @@
+.carousel-wrapper {
+  overflow: hidden;
+  width: 100%;
+}
+
+.carousel-track-left,
+.carousel-track-right {
+  display: flex;
+  width: max-content;
+  gap: 20px;
+}
+
+.carousel-track-left {
+  animation: scrollLeft 60s linear infinite;
+}
+
+.carousel-track-right {
+  animation: scrollRight 60s linear infinite;
+}
+
+.carousel-track-left:hover,
+.carousel-track-right:hover {
+  animation-play-state: paused;
+}
+
+@keyframes scrollLeft {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(calc(-50% - 10px));
+  }
+}
+
+@keyframes scrollRight {
+  from {
+    transform: translateX(calc(-50% - 10px));
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+@media (max-width:768px){
+
+.carousel-track-left,
+.carousel-track-right{
+animation-duration:30s;
+}
+
+}

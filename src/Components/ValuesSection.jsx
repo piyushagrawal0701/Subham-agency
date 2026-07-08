@@ -5,7 +5,7 @@ const values = [
     label: "OUR VALUES",
     title: "Curiosity\n& Creativity",
     description:
-      "We ask a lot of questions. Then we make stuff no one's made before. We see curiosity as fuel to dig deeper, ask better questions, and never settle for the obvious. Creativity, to us, is how those answers come to life. Together, they keep our work honest, original, and alive.",
+      "We ask a lot of questions. Then we make stuff no one's made before. We see curiosity as fuel to dig deeper, ask better questions, and never settle for the obvious. Together, they keep our work honest, original, and alive.",
   },
   {
     label: "OUR MISSION",
@@ -53,8 +53,8 @@ export default function ValuesSection() {
             className={`
               grid
               lg:grid-cols-2
-              gap-12
-              lg:gap-24
+              gap-4
+              lg:gap-16
               items-start
               ${
                 index !== values.length - 1
@@ -72,8 +72,8 @@ export default function ValuesSection() {
               <h2
                 className="
                 mt-6
-                text-5xl
-                md:text-7xl
+                text-3xl
+                md:text-4xl
                 leading-[1]
                 font-medium
                 text-black
@@ -90,7 +90,7 @@ export default function ValuesSection() {
                 className="
                 text-gray-600
                 text-lg
-                md:text-2xl
+                md:text-lg
                 leading-relaxed
                 max-w-2xl
                 "

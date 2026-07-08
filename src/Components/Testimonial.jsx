@@ -1,249 +1,181 @@
-import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { useEffect } from "react";
+import { motion } from "framer-motion";
+import useEmblaCarousel from "embla-carousel-react";
+import Autoplay from "embla-carousel-autoplay";
+import { Quote } from "lucide-react";
 
 const testimonials = [
   {
-    text: "PrebuiltUI helped us move faster without sacrificing design quality. The components feel production-ready.",
-    name: "Cristofer Levin",
-    role: "Frontend Engineer",
-    image:
-      "https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=200",
+    title: "High Quality Work",
+    text: "The social media and Google Ads campaigns have been extremely effective and engaging, resulting in increased brand awareness and customer engagement.",
+    name: "Vikram Shastry",
+    role: "CEO, BLACK LOTUS",
+    image: "https://i.pravatar.cc/150?img=11",
   },
   {
-    text: "The attention to detail in PrebuiltUI is impressive. Saved me hours of repetitive work.",
-    name: "Rohan Mehta",
+    title: "Exceeded our expectations",
+    text: "Subham has been very instrumental in designing various marketing materials. They created beautiful brochures, flyers and digital creatives that helped us stand out.",
+    name: "Dr. Pooja Malhotra",
+    role: "Co-Founder, VNA Hospital",
+    image: "https://i.pravatar.cc/150?img=32",
+  },
+  {
+    title: "Creative Team",
+    text: "Working with Subham was smooth from beginning to end. Their communication and design execution exceeded our expectations.",
+    name: "Rahul Sharma",
+    role: "Founder, PixelCraft",
+    image: "https://i.pravatar.cc/150?img=18",
+  },
+  {
+    title: "Amazing Branding Experience",
+    text: "Our complete brand identity was transformed beautifully. We received exactly what we imagined and even more.",
+    name: "Priya Mehta",
+    role: "Marketing Head",
+    image: "https://i.pravatar.cc/150?img=48",
+  },
+  {
+    title: "Highly Recommended",
+    text: "They understand branding deeply and deliver premium quality work with excellent attention to detail.",
+    name: "Amit Jain",
     role: "Startup Founder",
-    image:
-      "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=200",
-  },
-  {
-    text: "We were able to ship faster using PrebuiltUI. The consistency across components made UI feel polished.",
-    name: "Jason Kim",
-    role: "Product Designer",
-    image:
-      "https://images.unsplash.com/photo-1527980965255-d3b416303d12?w=200",
-  },
-  {
-    text: "PrebuiltUI feels like it was built by people who actually ship products.",
-    name: "Alex Turner",
-    role: "Full Stack Developer",
-    image:
-      "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?w=200",
-  },
-  {
-    text: "Helped us maintain design consistency across multiple projects.",
-    name: "Sofia Martinez",
-    role: "UX Designer",
-    image:
-      "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=200",
-  },
-  {
-    text: "Our team productivity improved noticeably after adopting PrebuiltUI.",
-    name: "Daniel Wong",
-    role: "UI Designer",
-    image:
-      "https://raw.githubusercontent.com/prebuiltui/prebuiltui/main/assets/userImage/userImage1.png",
+    image: "https://i.pravatar.cc/150?img=14",
   },
 ];
 
 export default function Testimonial() {
-  const ref = useRef(null);
-
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start end", "end start"],
+  const autoplay = Autoplay({
+    delay: 2000,
+    stopOnInteraction: true,
+    stopOnMouseEnter: false,
   });
 
-  const y = useTransform(scrollYProgress, [0, 0.2], [120, 0]);
-
-  const scale = useTransform(scrollYProgress, [0.8, 1], [1, 0.96]);
-
-  const rows = [
+  const [emblaRef, emblaApi] = useEmblaCarousel(
     {
-      start: 0,
-      end: 3,
-      className: "animate-scroll",
+      loop: true,
+      align: "center",
+      skipSnaps: false,
     },
-    {
-      start: 3,
-      end: 6,
-      className: "animate-scroll-reverse",
-    },
-  ];
-
-  const renderCard = (testimonial, index) => (
-    <motion.div
-      key={index}
-      initial={{
-        opacity: 0,
-        y: 40,
-      }}
-      whileInView={{
-        opacity: 1,
-        y: 0,
-      }}
-      viewport={{ once: true }}
-      transition={{
-        duration: 0.5,
-      }}
-      whileHover={{
-        y: -8,
-      }}
-      className="
-      bg-[#fff]
-      border
-      border-gray-300
-      rounded-2xl
-      p-6
-      shrink-0
-      w-[350px]
-      "
-    >
-      <div className="flex mb-5">
-        {[...Array(5)].map((_, i) => (
-          <span key={i} className="text-yellow-400 text-lg">
-            ★
-          </span>
-        ))}
-      </div>
-
-      <p className="text-gray-600 leading-relaxed mb-6">
-        {testimonial.text}
-      </p>
-
-      <div className="flex items-center gap-3">
-        <img
-          src={testimonial.image}
-          alt={testimonial.name}
-          className="w-12 h-12 rounded-full object-cover"
-        />
-
-        <div>
-          <h4 className="text-black font-medium">
-            {testimonial.name}
-          </h4>
-
-          <p className="text-gray-500 text-sm">
-            {testimonial.role}
-          </p>
-        </div>
-      </div>
-    </motion.div>
+    [autoplay],
   );
 
+  useEffect(() => {
+    if (!emblaApi) return;
+  }, [emblaApi]);
+
   return (
-    <>
-      <style>
-        {`
-          @keyframes scroll {
-            from {
-              transform: translateX(0);
-            }
-            to {
-              transform: translateX(-50%);
-            }
-          }
+    <motion.section
+      initial={{ opacity: 0, y: 70 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.8 }}
+      className="relative bg-white py-28 overflow-hidden"
+    >
+      <div className="max-w-[1700px] mx-auto">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-7xl font-semibold">Testimonials</h2>
+        </div>
 
-          @keyframes scrollReverse {
-            from {
-              transform: translateX(-50%);
-            }
-            to {
-              transform: translateX(0);
-            }
-          }
+        <div className="relative">
+          {/* Left Blur */}
+          <div className="absolute left-0 top-0 bottom-0 w-48 bg-gradient-to-r from-white via-white/90 to-transparent z-20 pointer-events-none  max-md:hidden" />
 
-          .animate-scroll {
-            animation: scroll 25s linear infinite;
-          }
+          {/* Right Blur */}
+          <div className="absolute right-0 top-0 bottom-0 w-48 bg-gradient-to-l from-white via-white/90 to-transparent z-20 pointer-events-none max-md:hidden" />
 
-          .animate-scroll-reverse {
-            animation: scrollReverse 25s linear infinite;
-          }
-        `}
-      </style>
+          {/* ================= Desktop Carousel ================= */}
+          <div className="hidden md:block">
+            <div className="overflow-hidden" ref={emblaRef}>
+              <div className="flex">
+                {testimonials.concat(testimonials).map((item, index) => (
+                  <div
+                    key={index}
+                    className="
+                    flex-[0_0_85%]
+                    md:flex-[0_0_58%]
+                    xl:flex-[0_0_40%]
+                    px-5
+                  "
+                  >
+                    <motion.div
+                      // whileHover={{
+                      //   y: -8,
+                      //   scale: 1.02,
+                      // }}
+                      // transition={{
+                      //   duration: .3,
+                      // }}
+                      className="
+                      rounded-[36px]
+                      bg-[#F5F5F5]
+                      p-10
+                      h-full
+                    "
+                    >
+                      <div className="w-14 h-14 rounded-full bg-violet-600 flex items-center justify-center mb-8">
+                        <Quote size={22} className="text-white" />
+                      </div>
 
-      <motion.section
-        ref={ref}
-        style={{ y, scale }}
-        className="
-          relative
-          z-50
-          bg-[#FAFAFA]
-          rounded-t-[60px]
-          -mt-20
-          py-24
-          overflow-hidden
-        "
-      >
-        <div className="max-w-7xl mx-auto">
-          {/* Header */}
+                      <h3 className="text-3xl font-semibold leading-snug">
+                        {item.title}
+                      </h3>
 
-          <motion.div
-            initial={{
-              opacity: 0,
-              y: 30,
-            }}
-            whileInView={{
-              opacity: 1,
-              y: 0,
-            }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <div
-              className="
-                inline-flex
-                px-5
-                py-2
-                rounded-full
-                bg-violet-100
-                text-violet-700
-                text-sm
-                font-medium
-                mb-5
-              "
-            >
-              Loved By Clients
+                      <p className="text-gray-500 text-lg mt-6 leading-9">
+                        {item.text}
+                      </p>
+
+                      <div className="flex items-center gap-5 mt-10">
+                        <img
+                          src={item.image}
+                          alt={item.name}
+                          className="w-16 h-16 rounded-full object-cover"
+                        />
+
+                        <div>
+                          <h4 className="font-semibold text-2xl">
+                            {item.name}
+                          </h4>
+
+                          <p className="text-gray-500 mt-1">{item.role}</p>
+                        </div>
+                      </div>
+                    </motion.div>
+                  </div>
+                ))}
+              </div>
             </div>
+          </div>
 
-            <h2 className="text-4xl md:text-7xl font-semibold text-black">
-              What People Say
-            </h2>
+          {/* ================= Mobile Cards ================= */}
 
-            <p className="text-gray-500 mt-5 max-w-xl mx-auto">
-              Real feedback from founders, startups, agencies and businesses
-              we've worked with.
-            </p>
-          </motion.div>
+          <div className="md:hidden px-5 space-y-5">
+            {testimonials.slice(0, 3).map((item, index) => (
+              <div key={index} className="bg-[#F5F5F5] rounded-[26px] p-6">
+                <h3 className="text-2xl font-semibold leading-snug">
+                  {item.title}
+                </h3>
 
-          {/* Rows */}
+                <p className="text-gray-500 mt-4 leading-7">{item.text}</p>
 
-          <div className="space-y-6">
-            {rows.map((row, rowIndex) => (
-              <div
-                key={rowIndex}
-                className="relative overflow-hidden"
-              >
-                <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-[#FAFAFA] to-transparent z-10" />
+                <div className="flex items-center gap-3 mt-6">
+                  <img
+                    src={item.image}
+                    alt={item.name}
+                    className="w-12 h-12 rounded-full object-cover"
+                  />
 
-                <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-[#FAFAFA] to-transparent z-10" />
+                  <div>
+                    <h4 className="font-semibold">{item.name}</h4>
 
-                <div
-                  className={`flex gap-6 ${row.className}`}
-                >
-                  {[
-                    ...testimonials.slice(row.start, row.end),
-                    ...testimonials.slice(row.start, row.end),
-                  ].map((testimonial, index) =>
-                    renderCard(testimonial, index)
-                  )}
+                    <p className="text-sm text-gray-500 uppercase">
+                      {item.role}
+                    </p>
+                  </div>
                 </div>
               </div>
             ))}
           </div>
         </div>
-      </motion.section>
-    </>
+      </div>
+    </motion.section>
   );
 }

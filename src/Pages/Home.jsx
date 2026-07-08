@@ -1,6 +1,6 @@
 import React from 'react'
 import HeroSection from '../Components/HeroSection'
-import CTA from '../Components/CTA'
+// import CTA from '../Components/CTA'
 import Testimonial from '../Components/Testimonial'
 import ServicesSection from '../Components/ServicesSection'
 import OverviewSection from '../Components/OverviewSection'
@@ -14,7 +14,7 @@ const Home = () => {
       <OverviewSection/>
       <ToolsSection/>
       <Testimonial/>
-      <CTA/>
+      {/* <CTA/> */}
     </>
   )
 }

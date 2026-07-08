@@ -107,82 +107,26 @@ export default function TeamMembers() {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
-              whileHover={{ y: -8 }}
+              // whileHover={{ y: -8 }}
               className="group"
             >
               {/* Image */}
 
-              <div className="relative overflow-hidden rounded-[28px]">
+              <div className="relative overflow-hidden rounded-[15px]">
                 <img
                   src={member.image}
                   alt={member.name}
                   className="
                     w-full
-                    h-[450px]
+                    h-[354px]
                     object-cover
                     transition-all
                     duration-700
-                    group-hover:scale-105
+                   
                   "
                 />
 
-                {/* Overlay */}
-
-                <div
-                  className="
-                  absolute
-                  inset-0
-                  bg-black/50
-                  opacity-0
-                  group-hover:opacity-100
-                  transition-all
-                  duration-500
-                  flex
-                  items-end
-                  justify-center
-                  pb-6
-                "
-                >
-                  <div className="flex gap-4">
-                    <a
-                      href={member.linkedin}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="
-                        w-12
-                        h-12
-                        rounded-full
-                        bg-white
-                        flex
-                        items-center
-                        justify-center
-                        hover:scale-110
-                        transition
-                      "
-                    >
-                      <img width="30" height="30" src="https://img.icons8.com/color/48/linkedin.png" alt="linkedin"/>
-                    </a>
-
-                    <a
-                      href={member.portfolio}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="
-                        w-12
-                        h-12
-                        rounded-full
-                        bg-white
-                        flex
-                        items-center
-                        justify-center
-                        hover:scale-110
-                        transition
-                      "
-                    >
-                      <img width="30" height="30" src="https://img.icons8.com/fluency/48/portfolio.png" alt="portfolio"/>
-                    </a>
-                  </div>
-                </div>
+              
               </div>
 
               {/* Content */}

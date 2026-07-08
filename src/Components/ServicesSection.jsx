@@ -114,8 +114,8 @@ export default function ServicesSection() {
                 className="
                   bg-[#F3F3F3]
                   rounded-[28px]
-                  p-6 md:p-8
-                  min-h-[260px]
+                  p-6 md:p-6 
+                  min-h-[220px]
                   flex
                   flex-col
                   justify-between
@@ -131,11 +131,11 @@ export default function ServicesSection() {
                 />
 
                 <div>
-                  <h3 className="text-xl md:text-2xl font-semibold text-black mt-6">
+                  <h3 className="text-xl md:text-2xl font-semibold text-black">
                     {service.title}
                   </h3>
 
-                  <p className="mt-3 text-gray-500 leading-relaxed">
+                  <p className="mt-2 text-gray-500 leading-relaxed">
                     {service.description}
                   </p>
                 </div>

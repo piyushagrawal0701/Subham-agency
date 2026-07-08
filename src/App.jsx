@@ -12,7 +12,7 @@ import WorkDetails from "./Pages/WorkDetails";
 function App() {
   return (
     <div className="bg-black min-h-screen">
-      <div className="max-w-[1800px] mx-auto px-4 md:px-6">
+      <div className="max-w-[2000px] mx-auto px-4 md:px-6">
         <Navbar />
 
         <Routes>

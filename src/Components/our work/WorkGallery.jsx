@@ -9,7 +9,7 @@ export default function WorkGallery({ works }) {
       rounded-t-[60px]
       -mt-10
       z-20
-      px-8
+      px-4
       md:px-14
       py-20
       "

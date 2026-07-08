@@ -32,6 +32,7 @@ export default function WorkHero({ title, subtitle }) {
         justify-center
         text-center
         px-6
+        
         "
       >
         <div>

@@ -81,6 +81,7 @@ export default function OverviewSection() {
               flex
               flex-col
               justify-between
+              max-md:hidden
             "
           >
             <h3 className="text-white text-5xl md:text-6xl font-semibold">
@@ -133,6 +134,7 @@ export default function OverviewSection() {
               flex
               flex-col
               justify-between
+               max-md:hidden
             "
           >
             <h3 className="text-white text-5xl md:text-6xl font-semibold">

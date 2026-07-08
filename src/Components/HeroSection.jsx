@@ -130,7 +130,7 @@ export default function HeroSection() {
           className="flex justify-center mt-10"
         >
           <div className="rounded-full bg-black/40 border border-white/20 backdrop-blur-xl sm:px-8 px-4 py-3 text-xs md:text-base">
-            🌍 Designing across 8+ Countries 🇮🇳 🇺🇸 🇦🇪 🇬🇧 🇸🇬 🇨🇦 🇦🇺
+            🌍 Designing across 8+ Countries 🇮🇳 🇺🇸 🇬🇧 🇸🇬 🇨🇦
           </div>
         </motion.div>
 

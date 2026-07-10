@@ -34,7 +34,7 @@ export default function Footer() {
 
             <Link
               to="/"
-              className="text-5xl font-black tracking-tight"
+              className="text-5xl font-semibold tracking-tight"
             >
               Subham
             </Link>
@@ -71,7 +71,7 @@ export default function Footer() {
 
             </h4>
 
-            <div className="flex flex-col mt-8 gap-y-5">
+            <div className="flex flex-col mt-8 gap-y-5 text-gray-500">
 
               <Link to="/about" className="hover:text-violet-400">
                 About
@@ -107,7 +107,7 @@ export default function Footer() {
 
             </h4>
 
-            <div className="mt-8 space-y-5">
+            <div className="mt-8 space-y-5 text-gray-500">
 
               <a
                 href="#"
@@ -189,7 +189,7 @@ export default function Footer() {
           md:text-[140px]
           lg:text-[220px]
           xl:text-[280px]
-          font-bold
+          font-normal
           leading-none
           text-white/[0.08]
         "

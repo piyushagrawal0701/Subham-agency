@@ -38,7 +38,7 @@ export default function ValuesSection() {
       z-30
       bg-[#F8F8F8]
       rounded-t-[60px]
-      py-24 md:py-32
+      pt-24  md:pt-20
       "
     >
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
@@ -54,11 +54,11 @@ export default function ValuesSection() {
               grid
               lg:grid-cols-2
               gap-4
-              lg:gap-16
+              lg:gap-10
               items-start
               ${
                 index !== values.length - 1
-                  ? "pb-24 md:pb-32"
+                  ? "pb-14 md:pb-10"
                   : ""
               }
             `}
@@ -89,8 +89,8 @@ export default function ValuesSection() {
               <p
                 className="
                 text-gray-600
-                text-lg
-                md:text-lg
+                text-md
+                md:text-md
                 leading-relaxed
                 max-w-2xl
                 "

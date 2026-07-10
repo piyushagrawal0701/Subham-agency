@@ -86,11 +86,11 @@ export default function TeamMembers() {
             Our People
           </span>
 
-          <h2 className="mt-4 text-5xl md:text-7xl font-medium text-black">
+          <h2 className="mt-4 text-4xl md:text-6xl font-medium text-black">
             Meet The Team
           </h2>
 
-          <p className="mt-5 text-gray-500 max-w-2xl mx-auto text-lg">
+          <p className="mt-5 text-gray-500 max-w-2xl mx-auto text-md">
             The talented minds behind every successful project,
             bringing creativity, strategy, and innovation together.
           </p>

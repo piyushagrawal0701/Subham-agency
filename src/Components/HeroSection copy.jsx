@@ -14,9 +14,9 @@ const HeroSection = () => {
     pt-24
   "
       >
-        <section class="flex flex-col items-center text-white text-sm ">
+        <section className="flex flex-col items-center text-white text-sm ">
           <svg
-            class="absolute -z-10 w-screen -mt-40 md:mt-0"
+            className="absolute -z-10 w-screen -mt-40 md:mt-0"
             width="1440"
             height="676"
             viewBox="0 0 1440 676"
@@ -47,19 +47,19 @@ const HeroSection = () => {
           </svg>
           
 
-          <div class="flex items-center sm:mt-32 mt-24 gap-2 border border-slate-600 text-gray-50 rounded-full px-4 py-2">
-            <div class="size-2.5 bg-green-500 rounded-full"></div>
+          <div className="flex items-center sm:mt-32 mt-24 gap-2 border border-slate-600 text-gray-50 rounded-full px-4 py-2">
+            <div className="size-2.5 bg-green-500 rounded-full"></div>
             <span>Prioritizing your brand identity</span>
           </div>
-          <h1 class="text-center text-5xl leading-[68px] md:text-6xl md:leading-[70px] mt-4 font-semibold max-w-2xl max-md:px-4">
+          <h1 className="text-center text-5xl leading-[68px] md:text-6xl md:leading-[70px] mt-4 font-semibold max-w-2xl max-md:px-4">
             We help <span className="text-indigo-400">build</span> brands
           </h1>
-          <p class="text-center text-base max-w-lg mt-2">
+          <p className="text-center text-base max-w-lg mt-2">
             At Subham, we help brands create identities and stories that truly
             connect with today's audiences.
           </p>
-          <div class="flex items-center gap-4 mt-8 max-md:flex-col">
-            <button class="max-md:w-full text-center mx-auto flex items-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white active:scale-95 rounded-lg px-7 h-11">
+          <div className="flex items-center gap-4 mt-8 max-md:flex-col">
+            <button className="max-md:w-full text-center mx-auto flex items-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white active:scale-95 rounded-lg px-7 h-11">
               Start Today
               <svg
                 width="20"
@@ -77,13 +77,13 @@ const HeroSection = () => {
                 />
               </svg>
             </button>
-            <button class="border border-slate-400 active:scale-95 hover:bg-white/10 transition rounded-lg px-8 h-11">
+            <button className="border border-slate-400 active:scale-95 hover:bg-white/10 transition rounded-lg px-8 h-11">
               Free consultation
             </button>
           </div>
           <img
             src="https://raw.githubusercontent.com/prebuiltui/prebuiltui/main/assets/hero/hero-section-showcase-2.png"
-            class="w-full rounded-[15px] max-w-4xl mt-16"
+            className="w-full rounded-[15px] max-w-4xl mt-16"
             alt="hero section showcase"
           />
         </section>

@@ -72,7 +72,7 @@ export default function Testimonial() {
     >
       <div className="max-w-[1700px] mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-7xl font-semibold">Testimonials</h2>
+          <h2 className="text-4xl md:text-7xl font-medium">Testimonials</h2>
         </div>
 
         <div className="relative">
@@ -115,7 +115,7 @@ export default function Testimonial() {
                         <Quote size={22} className="text-white" />
                       </div>
 
-                      <h3 className="text-3xl font-semibold leading-snug">
+                      <h3 className="text-3xl font-medium leading-snug">
                         {item.title}
                       </h3>
 
@@ -131,7 +131,7 @@ export default function Testimonial() {
                         />
 
                         <div>
-                          <h4 className="font-semibold text-2xl">
+                          <h4 className="font-medium text-2xl">
                             {item.name}
                           </h4>
 
@@ -150,7 +150,7 @@ export default function Testimonial() {
           <div className="md:hidden px-5 space-y-5">
             {testimonials.slice(0, 3).map((item, index) => (
               <div key={index} className="bg-[#F5F5F5] rounded-[26px] p-6">
-                <h3 className="text-2xl font-semibold leading-snug">
+                <h3 className="text-2xl font-medium leading-snug">
                   {item.title}
                 </h3>
 
@@ -164,7 +164,7 @@ export default function Testimonial() {
                   />
 
                   <div>
-                    <h4 className="font-semibold">{item.name}</h4>
+                    <h4 className="font-medium">{item.name}</h4>
 
                     <p className="text-sm text-gray-500 uppercase">
                       {item.role}

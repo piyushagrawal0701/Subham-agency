@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import "./css/HeroCarousel.css";
+import countriesSvg from "../assets/contries.svg";
+import MainBtn from "./MainBtn";
 
 const topImages = [
   "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEE_nXIteFIau10acFeO_8-7S-A_R8ep-NO3e_1KZXEA&s=10",
@@ -11,14 +13,13 @@ const topImages = [
   "https://img.magnific.com/free-psd/professional-website-design-landing-page-template_23-2148772440.jpg",
 ];
 
-
-  const bottomImages = [
-    "https://images.unsplash.com/photo-1517694712202-14dd9538aa97",
-    "https://images.unsplash.com/photo-1521737604893-d14cc237f11d",
-    "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4",
-    "https://images.unsplash.com/photo-1497366754035-f200968a6e72",
-    "https://images.unsplash.com/photo-1516321497487-e288fb19713f",
-  ];
+const bottomImages = [
+  "https://images.unsplash.com/photo-1517694712202-14dd9538aa97",
+  "https://images.unsplash.com/photo-1521737604893-d14cc237f11d",
+  "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4",
+  "https://images.unsplash.com/photo-1497366754035-f200968a6e72",
+  "https://images.unsplash.com/photo-1516321497487-e288fb19713f",
+];
 
 export default function HeroSection() {
   return (
@@ -28,14 +29,8 @@ export default function HeroSection() {
       <div
         className="absolute inset-0"
         style={{
-          background: `
-          radial-gradient(circle at top center,
-          #8d5bff 0%,
-          #6f3de6 25%,
-          #5127c8 45%,
-          #35167e 65%,
-          #19052e 100%)
-        `,
+          backgroundImage: "url('/src/assets/hero-bg.png')",
+          backgroundPosition: "top",
         }}
       />
 
@@ -51,32 +46,32 @@ export default function HeroSection() {
 
       {/* Vignette */}
 
-      <div
+      {/* <div
         className="absolute inset-0"
         style={{
           background:
             "radial-gradient(circle at center, transparent 45%, rgba(0,0,0,.45) 100%)",
         }}
-      />
+      /> */}
 
       {/* Dot Pattern */}
 
-      <div
+      {/* <div
         className="absolute inset-0 opacity-20"
         style={{
           backgroundImage:
-            "radial-gradient(rgba(255,255,255,.9) 1px, transparent 1px)",
+            "radial-gradient(rgba(255,255,255,.9) 1.5px, transparent 1px)",
           backgroundSize: "18px 18px",
         }}
-      />
+      /> */}
 
       {/* Glow */}
-
-      <div className="absolute left-1/2 top-0 -translate-x-1/2 w-[900px] h-[700px] rounded-full bg-violet-500 blur-[220px] opacity-30" />
+      {/* 
+      <div className="absolute left-1/2 top-0 -translate-x-1/2 w-[900px] h-[700px] rounded-full bg-violet-500 blur-[220px] opacity-30" /> */}
 
       {/* ================= CONTENT ================= */}
 
-      <div className="relative z-20 max-w-7xl mx-auto px-6 pt-28">
+      <div className="relative z-20 max-w-7xl mx-auto px-6 sm:pt-28 pt-20">
         {/* Google Rating */}
 
         <motion.div
@@ -85,13 +80,16 @@ export default function HeroSection() {
           transition={{ delay: 0.3 }}
           className="flex flex-col items-center"
         >
-          <div className="text-5xl font-bold">G</div>
+          <div className="sm:text-5xl text-4xl font-bold">G</div>
 
-          <div className="flex text-yellow-400 mt-2">★★★★★</div>
+          <div className="flex text-yellow-400 mt-0">
+            <span className="pt-[5px] text-white/80 text-[12px] px-2">
+              4.9{" "}
+            </span>{" "}
+            ★★★★★
+          </div>
 
-          <p className="mt-2 text-white/80 text-sm">4.9 Google Rating</p>
-
-          <h4 className="mt-4 text-xl font-semibold">
+          <h4 className="mt-4 sm:text-xl text-md font-semibold">
             Leading UI/UX Design Agency
           </h4>
         </motion.div>
@@ -102,21 +100,22 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 70 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5 }}
-          className="text-center mt-8"
+          className="text-center mt-6"
         >
-          <h1 className="font-semibold leading-[1.1] text-4xl md:text-7xl">
-            We <span className="italic font-serif font-normal">Design</span>{" "}
-            Products That
-            <br className="max-md:hidden" /> {" "}
-            Drive
-            <span className="hidden md:inline-flex items-center gap-3 mx-6">
+          <h1 className="font-semibold leading-[1.1] text-3xl md:text-7xl ">
+            We <span className="italic font-serif font-normal">Design</span>{" "}  <br className="max-md:block hidden" /> 
+            Products  That
+            <br className="max-md:hidden" /> Drive
+            <span className="hidden md:inline-flex items-center mx-6">
               <div className="bg-white rounded-full p-3 text-3xl">🎨</div>
 
-              <div className="bg-white rounded-full p-3 text-3xl">🌐</div>
+              <div className="bg-white rounded-full p-3 text-3xl ">🌐</div>
 
               <div className="bg-white rounded-full p-3 text-3xl">⚡</div>
             </span>
-            <span className="md:hidden inline px-2 text-yellow-300">Amazing</span>{" "}
+            <span className="md:hidden inline px-2 text-yellow-300">
+              Amazing
+            </span>
             <span className="italic font-serif font-normal">Results</span>
           </h1>
         </motion.div>
@@ -127,10 +126,10 @@ export default function HeroSection() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.8 }}
-          className="flex justify-center mt-10"
+          className="flex justify-center sm:mt-8 mt-6"
         >
           <div className="rounded-full bg-black/40 border border-white/20 backdrop-blur-xl sm:px-8 px-4 py-3 text-xs md:text-base">
-            🌍 Designing across 8+ Countries 🇮🇳 🇺🇸 🇬🇧 🇸🇬 🇨🇦
+            <img src={countriesSvg} alt="" />
           </div>
         </motion.div>
 
@@ -140,21 +139,22 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1 }}
-          className="flex justify-center mt-10"
+          className="flex justify-center sm:mt-10 mt-6 max-md:w-full"
         >
-          <button className="group bg-white text-violet-700 px-8 py-5 rounded-xl font-semibold flex items-center gap-3 hover:scale-105 transition">
+          {/* <button className="group bg-white text-violet-700 px-8 py-5 rounded-xl font-semibold flex items-center gap-3 hover:scale-105 transition max-md:w-full max-md:justify-center">
             Book a Call
             <ArrowRight
               size={20}
               className="group-hover:translate-x-1 transition"
             />
-          </button>
+          </button> */}
+          <MainBtn />
         </motion.div>
       </div>
 
       {/* ================= IMAGE CAROUSELS ================= */}
 
-      <div className="relative z-20 mt-24 pb-12">
+      <div className="relative z-20 sm:mt-16 mt-10 pb-12">
         {/* Top */}
 
         <div className="carousel-wrapper">

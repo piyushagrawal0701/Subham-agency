@@ -198,9 +198,9 @@ export default function Navbar() {
 
             <div className="hidden md:block">
 
-              <a
-                href="https://wa.me/919334076843?text=Hi,%20I%20visited%20your%20website%20and%20would%20like%20to%20discuss%20my%20project."
-                target="_blank"
+              <Link
+                to="/contact"
+               
                 rel="noopener noreferrer"
               >
                 <button
@@ -213,11 +213,12 @@ export default function Navbar() {
                   text-white
                   hover:bg-white/10
                   transition
+                  hover:cursor-pointer
                 "
                 >
                   Connect
                 </button>
-              </a>
+              </Link>
 
             </div>
 
@@ -381,9 +382,9 @@ export default function Navbar() {
 
               {/* Connect */}
 
-              <a
-                href="https://wa.me/919334076843?text=Hi,%20I%20visited%20your%20website%20and%20would%20like%20to%20discuss%20my%20project."
-                target="_blank"
+              <Link
+                to="/contact"
+                
                 rel="noopener noreferrer"
                 className="mt-12"
               >
@@ -395,12 +396,13 @@ export default function Navbar() {
                     bg-violet-600
                     hover:bg-violet-700
                     text-white
+                    hover:cursor-pointer
                     transition
                   "
                 >
                   Connect
                 </button>
-              </a>
+              </Link>
 
             </motion.div>
           </motion.div>

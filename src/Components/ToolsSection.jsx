@@ -100,11 +100,11 @@ export default function ToolsSection() {
       <div className="max-w-7xl mx-auto px-5 md:px-8">
         {/* Badge */}
 
-        <div className="flex justify-center">
+        {/* <div className="flex justify-center">
           <div className="bg-violet-600 text-white px-5 py-2 rounded-full text-sm font-medium">
             Applications
           </div>
-        </div>
+        </div> */}
 
         {/* Heading */}
 
@@ -114,7 +114,7 @@ export default function ToolsSection() {
             text-white
             text-4xl
             md:text-7xl
-            font-semibold
+            font-medium
             mt-8
           "
         >

@@ -209,9 +209,10 @@ export default function OverviewSection() {
             items-center
             justify-between
             gap-5
+            max-md:hidden
           "
         >
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-4 ">
             <div className="flex -space-x-3">
               <img
                 src="https://i.pravatar.cc/80?img=1"

@@ -30,13 +30,9 @@ export default function Navbar() {
       <header className="absolute top-0 left-0 w-full z-50">
         <div className="px-6 md:px-10 py-6">
           <div className="flex items-center justify-between relative">
-
             {/* Logo */}
 
-            <Link
-              to="/"
-              className="flex items-center gap-3 text-white"
-            >
+            <Link to="/" className="flex items-center gap-3 text-white">
               <div className="w-10 h-10 flex items-center justify-center">
                 <svg
                   viewBox="0 0 40 40"
@@ -50,9 +46,7 @@ export default function Navbar() {
                 </svg>
               </div>
 
-              <span className="text-3xl font-semibold">
-                Subham
-              </span>
+              <span className="text-3xl font-semibold">Subham</span>
             </Link>
 
             {/* Desktop Navbar */}
@@ -98,7 +92,6 @@ export default function Navbar() {
               >
                 <button className="flex items-center gap-2 text-white hover:text-violet-400 transition">
                   Our Work
-
                   <ChevronDown
                     size={18}
                     className={`transition duration-300 ${
@@ -113,7 +106,7 @@ export default function Navbar() {
                       initial={{
                         opacity: 0,
                         y: 15,
-                        scale: .95,
+                        scale: 0.95,
                       }}
                       animate={{
                         opacity: 1,
@@ -123,10 +116,10 @@ export default function Navbar() {
                       exit={{
                         opacity: 0,
                         y: 15,
-                        scale: .95,
+                        scale: 0.95,
                       }}
                       transition={{
-                        duration: .25,
+                        duration: 0.25,
                       }}
                       className="
                       absolute
@@ -143,9 +136,7 @@ export default function Navbar() {
                     "
                     >
                       <div className="p-3">
-
                         {workItems.map((item) => (
-
                           <Link
                             key={item.title}
                             to={item.path}
@@ -159,9 +150,7 @@ export default function Navbar() {
                           "
                           >
                             <div className="flex justify-between items-center">
-
                               <div>
-
                                 <h3 className="text-white font-semibold text-lg">
                                   {item.title}
                                 </h3>
@@ -169,7 +158,6 @@ export default function Navbar() {
                                 <p className="text-gray-400 text-sm mt-1">
                                   {item.desc}
                                 </p>
-
                               </div>
 
                               <motion.div
@@ -180,13 +168,9 @@ export default function Navbar() {
                               >
                                 →
                               </motion.div>
-
                             </div>
-
                           </Link>
-
                         ))}
-
                       </div>
                     </motion.div>
                   )}
@@ -197,12 +181,7 @@ export default function Navbar() {
             {/* Desktop Button */}
 
             <div className="hidden md:block">
-
-              <Link
-                to="/contact"
-               
-                rel="noopener noreferrer"
-              >
+              <Link to="/contact">
                 <button
                   className="
                   px-8
@@ -219,7 +198,6 @@ export default function Navbar() {
                   Connect
                 </button>
               </Link>
-
             </div>
 
             {/* Mobile Menu Button */}
@@ -241,12 +219,11 @@ export default function Navbar() {
             >
               <Menu size={26} />
             </button>
-
           </div>
         </div>
       </header>
 
-            {/* Mobile Menu */}
+      {/* Mobile Menu */}
 
       <AnimatePresence>
         {isOpen && (
@@ -328,15 +305,12 @@ export default function Navbar() {
               {/* Our Work */}
 
               <div className="w-full max-w-sm">
-
                 <h2 className="text-centertext-3xl font-semibold text-white mb-6">
                   Our Work
                 </h2>
 
                 <div className="space-y-4">
-
                   {workItems.map((item) => (
-
                     <Link
                       key={item.title}
                       to={item.path}
@@ -353,9 +327,7 @@ export default function Navbar() {
                       "
                     >
                       <div className="flex items-center justify-between">
-
                         <div>
-
                           <h3 className="text-white text-lg font-semibold">
                             {item.title}
                           </h3>
@@ -363,31 +335,18 @@ export default function Navbar() {
                           <p className="text-gray-400 text-sm mt-1">
                             {item.desc}
                           </p>
-
                         </div>
 
-                        <span className="text-gray-500 text-2xl">
-                          →
-                        </span>
-
+                        <span className="text-gray-500 text-2xl">→</span>
                       </div>
-
                     </Link>
-
                   ))}
-
                 </div>
-
               </div>
 
               {/* Connect */}
 
-              <Link
-                to="/contact"
-                
-                rel="noopener noreferrer"
-                className="mt-12"
-              >
+              <Link to="/contact" rel="noopener noreferrer" className="mt-12">
                 <button
                   className="
                     px-10
@@ -403,7 +362,6 @@ export default function Navbar() {
                   Connect
                 </button>
               </Link>
-
             </motion.div>
           </motion.div>
         )}

@@ -3,6 +3,8 @@ import { ArrowRight } from "lucide-react";
 import "./css/HeroCarousel.css";
 import countriesSvg from "../assets/contries.svg";
 import MainBtn from "./MainBtn";
+import heroBg from "../assets/hero-bg.png";
+
 
 const topImages = [
   "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEE_nXIteFIau10acFeO_8-7S-A_R8ep-NO3e_1KZXEA&s=10",
@@ -29,7 +31,7 @@ export default function HeroSection() {
       <div
         className="absolute inset-0"
         style={{
-          backgroundImage: "url('/src/assets/hero-bg.png')",
+          backgroundImage: `url(${heroBg})`,
           backgroundPosition: "top",
         }}
       />

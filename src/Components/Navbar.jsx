@@ -1,11 +1,17 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [workOpen, setWorkOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
+  
+  useEffect(() => {
+    setIsOpen(false);
+  }, [location.pathname]);
 
   const workItems = [
     {
@@ -180,10 +186,16 @@ export default function Navbar() {
 
             {/* Desktop Button */}
 
-            <div className="hidden md:block">
-              <Link to="/contact">
-                <button
-                  className="
+            <Link
+              to="/contact"
+              onClick={() => {
+                setIsOpen(false);
+
+                setTimeout(() => {
+                  navigate("/contact");
+                }, 300); // Match your exit animation duration
+              }}
+              className="
                   px-8
                   py-4
                   rounded-full
@@ -193,12 +205,11 @@ export default function Navbar() {
                   hover:bg-white/10
                   transition
                   hover:cursor-pointer
+                  hidden md:block
                 "
-                >
-                  Connect
-                </button>
-              </Link>
-            </div>
+            >
+              Connect
+            </Link>
 
             {/* Mobile Menu Button */}
 
